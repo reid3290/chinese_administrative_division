@@ -1,0 +1,15 @@
+{
+  "name": "chinese_administrative_division",
+  "version": "1.0.0",
+  "description": "中国行政区划数据",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zhang Jianhu",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "request": "^2.79.0"
+  }
+}
