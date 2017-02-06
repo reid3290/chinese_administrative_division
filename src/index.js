@@ -7,13 +7,15 @@ const XZQH_URL = 'http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/'; // 中国统计局
 
 request(XZQH_URL, (error, response, body) => {
     if (error) {
+        console.error(error);
         return;
     }
     const $ = cheerio.load(body);
-    const latest_url = $('.center_list_contlist a').attr('href');
-    const completed_url = url.resolve(XZQH_URL, latest_url);
+    const latest_url = $('.center_list_contlist a').attr('href'); // 从网页中提取最新数据的URL（即第一条数据）
+    const completed_url = url.resolve(XZQH_URL, latest_url); // 拼接为完整的URL
     request(completed_url, (error, response, body) => {
         if (error) {
+            console.error(error);
             return;
         }
         const $ = cheerio.load(body);
@@ -44,8 +46,9 @@ request(XZQH_URL, (error, response, body) => {
                 res[currentProvince][currentCity].push(a[1]);
             }
         });
-        fs.writeFile('./res.json', JSON.stringify(res), (error)=>{
+        fs.writeFile('../dist/province_city_district.json', JSON.stringify(res), (error)=>{
             if(error) {
+                console.error(error);
                 return;
             }
         });
