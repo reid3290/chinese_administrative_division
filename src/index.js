@@ -63,25 +63,25 @@ request(XZQH_URL, (error, response, body) => {
                 res[currentProvince][currentCity].push(a[1]);
             }
         });
-        fs.writeFile('../dist/province_city_district.json', JSON.stringify(res), (error)=>{
+        fs.writeFile('./dist/province_city_district.json', JSON.stringify(res), (error)=>{
             if(error) {
                 console.error(error);
                 return;
             }
         });
-        fs.writeFile('../dist/provinces.json', JSON.stringify(provinces), (error)=>{
+        fs.writeFile('./dist/provinces.json', JSON.stringify(provinces), (error)=>{
             if(error) {
                 console.error(error);
                 return;
             }
         });
-        fs.writeFile('../dist/cities.json', JSON.stringify(cities), (error)=>{
+        fs.writeFile('./dist/cities.json', JSON.stringify(cities), (error)=>{
             if(error) {
                 console.error(error);
                 return;
             }
         });
-        fs.writeFile('../dist/districts.json', JSON.stringify(districts), (error)=>{
+        fs.writeFile('./dist/districts.json', JSON.stringify(districts), (error)=>{
             if(error) {
                 console.error(error);
                 return;
