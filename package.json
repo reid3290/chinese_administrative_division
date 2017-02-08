@@ -1,14 +1,18 @@
 {
   "name": "chinese_administrative_division",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "中国行政区划数据",
   "main": "index.js",
   "scripts": {
     "start": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Zhang Jianhu",
-  "license": "ISC",
+  "author": "reid3290<geniusreid@163.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reid3290/chinese_administrative_division"
+  },
+  "license": "MIT",
   "dependencies": {
     "cheerio": "^0.22.0",
     "request": "^2.79.0"
